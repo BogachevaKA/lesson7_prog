@@ -35,7 +35,7 @@ double[] SumArray(int[,] array1)
     for (int i = 0; i < newArray.Length; i++)
     {
         newArray[i] /= array1.GetLength(0);
-    Console.WriteLine($"Среднее арифметическое № {i+1} равно {newArray}");
+    Console.WriteLine($"Среднее арифметическое равно {newArray}");
     }
     return newArray;
 }
