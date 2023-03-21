@@ -21,16 +21,21 @@ void PrintArray(int[,] array)
     }
 }
 
-void SumArray(int[,] array)
+double[] SumArray(int[,] array)
 {
     double[] newArray = new double[array.GetLength(1)];
-    int sumCols = 0;
-    int j = array.GetLength(1) - 1;
     for (int i = 0; i < array.GetLength(0); i++)
     {
-        sumCols += array[i, j];
-        newArray[i] = sumCols / array.GetLength(1);
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            newArray[i] += Convert.ToDouble(array[i, j]);
+        }
     }
+    for (int i = 0; i < newArray.Length; i++)
+    {
+        newArray[i] /= array.GetLength(0);
+    }
+    return newArray;
     Console.WriteLine($"Среднее арифметическое элементов в каждом столбце: {newArray}");
 }
 
