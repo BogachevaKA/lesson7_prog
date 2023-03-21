@@ -21,23 +21,23 @@ void PrintArray(int[,] array)
     }
 }
 
-double[] SumArray(int[,] array)
+double[] SumArray(int[,] array1)
 {
-    double[] newArray = new double[array.GetLength(1)];
-    for (int i = 0; i < array.GetLength(0); i++)
+    double[] newArray = new double[array1.GetLength(1)];
+    FillArray(array1);
+    for (int i = 0; i < array1.GetLength(0); i++)
     {
-        for (int j = 0; j < array.GetLength(1); j++)
+        for (int j = 0; j < array1.GetLength(1); j++)
         {
-            newArray[i] += Convert.ToDouble(array[i, j]);
+            newArray[i] += Convert.ToDouble(array1[i, j]);
         }
     }
     for (int i = 0; i < newArray.Length; i++)
     {
-        newArray[i] /= array.GetLength(0);
+        newArray[i] /= array1.GetLength(0);
     }
     return newArray;
 }
-
 
 
 Console.WriteLine("Введите количество строк");
