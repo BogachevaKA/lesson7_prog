@@ -24,18 +24,18 @@ void PrintArray(int[,] array)
 double[] SumArray(int[,] array1)
 {
     double[] newArray = new double[array1.GetLength(1)];
-    FillArray(array1);
+    
     for (int i = 0; i < array1.GetLength(0); i++)
     {
         for (int j = 0; j < array1.GetLength(1); j++)
         {
-            newArray[i] += Convert.ToDouble(array1[i, j]);
+            newArray[j] += Convert.ToDouble(array1[i, j]);
         }
     }
     for (int i = 0; i < newArray.Length; i++)
     {
         newArray[i] /= array1.GetLength(0);
-    Console.WriteLine($"Среднее арифметическое равно {newArray}");
+    Console.WriteLine($"Среднее арифметическое столбца № {i+1} равно {newArray[i]}");
     }
     return newArray;
 }
