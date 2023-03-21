@@ -35,6 +35,7 @@ double[] SumArray(int[,] array1)
     for (int i = 0; i < newArray.Length; i++)
     {
         newArray[i] /= array1.GetLength(0);
+    Console.WriteLine($"Среднее арифметическое № {i+1} равно {newArray}");
     }
     return newArray;
 }
@@ -47,5 +48,4 @@ int cols = Convert.ToInt32(Console.ReadLine());
 int[,] array = new int[rows, cols];
 FillArray(array);
 PrintArray(array);
-Console.WriteLine;
-PrintArray(SumArray(array));
+SumArray(array);
