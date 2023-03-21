@@ -36,7 +36,6 @@ double[] SumArray(int[,] array)
         newArray[i] /= array.GetLength(0);
     }
     return newArray;
-    Console.WriteLine($"Среднее арифметическое элементов в каждом столбце: {newArray}");
 }
 
 
@@ -48,4 +47,5 @@ int cols = Convert.ToInt32(Console.ReadLine());
 int[,] array = new int[rows, cols];
 FillArray(array);
 PrintArray(array);
-SumArray(array);
+Console.WriteLine;
+PrintArray(SumArray(array));
